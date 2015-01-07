@@ -1,3 +1,5 @@
+# add --color option to use color in non-tty terminal
+
 # HAML-Lint
 
 [![Gem Version](https://badge.fury.io/rb/haml-lint.svg)](http://badge.fury.io/rb/haml-lint)
