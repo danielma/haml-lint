@@ -19,6 +19,7 @@ module HamlLint
     # @return [Fixnum] exit status returned by the application
     def run(args)
       options = HamlLint::Options.new.parse(args)
+      apply_options(options)
       act_on_options(options)
     rescue HamlLint::Exceptions::InvalidCLIOption => ex
       log.error ex.message
@@ -38,6 +39,10 @@ module HamlLint
     private
 
     attr_reader :log
+
+    def apply_options(options)
+      log.color_enabled = options[:color]
+    end
 
     def act_on_options(options)
       if options[:help]
